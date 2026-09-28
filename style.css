@@ -1,0 +1,2381 @@
+/* =========================================================
+   LOVE STORY
+   SIMPLE ROMANTIC DESIGN
+========================================================= */
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+    --white: #ffffff;
+
+    --background: #fff8fa;
+
+    --pink: #ffdce5;
+
+    --light-pink: #fff0f3;
+
+    --rose: #ed8da1;
+
+    --red: #d94d68;
+
+    --dark-red: #ad3049;
+
+    --text: #51363d;
+
+    --soft-text: #9b737c;
+
+    --border: #f3ccd5;
+
+    --shadow:
+        0 15px 40px rgba(210, 70, 100, 0.12);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #ffe6ec,
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        "Manrope",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap'
+);
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+
+.hearts span {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: rgba(217, 77, 104, 0.15);
+
+    font-size: 30px;
+
+    animation:
+        floatHeart 12s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 22%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 40%;
+    animation-delay: 6s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 58%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 70%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 84%;
+    animation-delay: 7s;
+}
+
+
+.hearts span:nth-child(7) {
+    left: 95%;
+    animation-delay: 2s;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    padding: 18px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+.logo {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: var(--dark-red);
+
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: var(--red);
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+nav button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--soft-text);
+
+    padding: 8px 12px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+nav button:hover {
+
+    color: var(--red);
+
+    background:
+        var(--light-pink);
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    min-height: 80vh;
+}
+
+
+.scene {
+
+    display: none;
+
+    min-height:
+        calc(100vh - 130px);
+
+    padding:
+        80px 7%;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    animation:
+        fadeIn 0.5s ease;
+}
+
+
+.scene.active {
+
+    display: flex;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+#home {
+
+    flex-direction:
+        row;
+
+    gap: 80px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.home-content {
+
+    max-width: 560px;
+}
+
+
+.small-title {
+
+    color: var(--red);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+.home-content h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(60px, 9vw, 110px);
+
+    line-height:
+        0.9;
+
+    color: var(--text);
+
+    margin-bottom: 30px;
+}
+
+
+.home-content h1 span {
+
+    color: var(--red);
+}
+
+
+.home-description {
+
+    color: var(--soft-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    max-width: 470px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.main-button {
+
+    border: none;
+
+    background:
+        var(--red);
+
+    color: white;
+
+    padding:
+        14px 25px;
+
+    border-radius:
+        30px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(217, 77, 104, 0.22);
+
+    transition:
+        0.25s;
+}
+
+
+.main-button:hover {
+
+    background:
+        var(--dark-red);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BIG HEART
+========================================================= */
+
+.big-heart {
+
+    width: 300px;
+
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 220px;
+
+    color: var(--red);
+
+    filter:
+        drop-shadow(
+            0 20px 30px
+            rgba(217, 77, 104, 0.2)
+        );
+
+    animation:
+        heartbeat 1.8s ease-in-out infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.section-header p {
+
+    color: var(--red);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.section-header h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(40px, 6vw, 65px);
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-card {
+
+    width:
+        min(760px, 100%);
+
+    background:
+        var(--white);
+
+    padding:
+        55px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+    box-shadow:
+        var(--shadow);
+
+    line-height:
+        1.9;
+
+    font-size:
+        16px;
+}
+
+
+.letter-heart {
+
+    text-align: center;
+
+    color: var(--red);
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+
+.letter-card p {
+
+    margin-bottom: 20px;
+}
+
+
+.letter-greeting {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 25px;
+
+    color: var(--red);
+}
+
+
+.letter-ending {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 22px;
+
+    color: var(--red);
+}
+
+
+.signature {
+
+    margin-top: 35px;
+
+    color: var(--soft-text);
+
+    text-align: right;
+}
+
+
+.signature strong {
+
+    color: var(--red);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+.memory-grid {
+
+    width:
+        min(1000px, 100%);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.memory-card {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(180, 70, 90, 0.08);
+
+    cursor: pointer;
+
+    transition:
+        0.3s;
+}
+
+
+.memory-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.memory-card img {
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.memory-card span {
+
+    display: block;
+
+    padding: 13px;
+
+    color: var(--soft-text);
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.music-player {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-bottom: 25px;
+}
+
+
+.album-button {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border:
+        8px solid white;
+
+    box-shadow:
+        0 15px 45px
+        rgba(180, 70, 90, 0.2);
+
+    transition:
+        0.3s;
+}
+
+
+.album-button:hover {
+
+    transform:
+        scale(1.03);
+}
+
+
+.album-button.playing img {
+
+    animation:
+        spinRecord 7s linear infinite;
+}
+
+
+.album-button img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.play-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(180, 40, 65, 0.18);
+
+    opacity: 0;
+
+    transition:
+        0.25s;
+}
+
+
+.album-button:hover .play-overlay {
+
+    opacity: 1;
+}
+
+
+.play-overlay span {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.92);
+
+    color: var(--red);
+
+    font-size: 22px;
+}
+
+
+@keyframes spinRecord {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.skip-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        white;
+
+    color: var(--red);
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+
+.skip-button:hover {
+
+    background:
+        var(--light-pink);
+
+    transform:
+        scale(1.1);
+}
+
+
+.song-information {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.song-information h3 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 27px;
+
+    color: var(--text);
+}
+
+
+.song-information p {
+
+    color:
+        var(--soft-text);
+
+    margin-top: 4px;
+}
+
+
+.playlist-button {
+
+    margin-top: 15px;
+
+    padding:
+        10px 20px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+    background:
+        white;
+
+    color:
+        var(--red);
+
+    cursor: pointer;
+}
+
+
+.music-progress {
+
+    width:
+        min(600px, 100%);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap: 10px;
+
+    color:
+        var(--soft-text);
+
+    font-size: 12px;
+}
+
+
+.music-progress input {
+
+    flex: 1;
+
+    accent-color:
+        var(--red);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PLAYLIST
+========================================================= */
+
+.playlist-panel {
+
+    position: fixed;
+
+    right: 20px;
+
+    top: 90px;
+
+    width:
+        min(350px, calc(100% - 40px));
+
+    max-height:
+        70vh;
+
+    overflow-y:
+        auto;
+
+    padding: 20px;
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(150, 50, 70, 0.18);
+
+    transform:
+        translateX(120%);
+
+    transition:
+        0.35s;
+
+    z-index: 200;
+}
+
+
+.playlist-panel.open {
+
+    transform:
+        translateX(0);
+}
+
+
+.playlist-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        15px;
+}
+
+
+.playlist-header h3 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    color:
+        var(--red);
+}
+
+
+.playlist-header button {
+
+    border:
+        none;
+
+    background:
+        none;
+
+    color:
+        var(--soft-text);
+
+    font-size:
+        25px;
+
+    cursor:
+        pointer;
+}
+
+
+.playlist-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        10px;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s;
+}
+
+
+.playlist-item:hover {
+
+    background:
+        var(--light-pink);
+}
+
+
+.playlist-item.active {
+
+    background:
+        var(--pink);
+}
+
+
+.playlist-item img {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        8px;
+}
+
+
+.playlist-item div {
+
+    flex:
+        1;
+}
+
+
+.playlist-item strong {
+
+    display:
+        block;
+
+    font-size:
+        13px;
+}
+
+
+.playlist-item small {
+
+    color:
+        var(--soft-text);
+}
+
+
+/* =========================================================
+   TIME COUNTER
+========================================================= */
+
+.time-intro {
+
+    text-align:
+        center;
+
+    color:
+        var(--soft-text);
+
+    margin-bottom:
+        40px;
+}
+
+
+.counter {
+
+    width:
+        min(950px, 100%);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap:
+        12px;
+}
+
+
+.counter div {
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        18px;
+
+    padding:
+        25px 10px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(180,70,90,0.06);
+}
+
+
+.counter strong {
+
+    display:
+        block;
+
+    color:
+        var(--red);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        38px;
+}
+
+
+.counter span {
+
+    color:
+        var(--soft-text);
+
+    font-size:
+        12px;
+}
+
+
+.anniversary-text {
+
+    margin-top:
+        30px;
+
+    color:
+        var(--red);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        24px;
+}
+
+
+/* =========================================================
+   SURPRISE
+========================================================= */
+
+.gift-box {
+
+    text-align:
+        center;
+
+    background:
+        white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+
+    padding:
+        50px;
+
+    width:
+        min(500px, 100%);
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+.gift-icon {
+
+    font-size:
+        80px;
+
+    margin-bottom:
+        20px;
+}
+
+
+.gift-box p {
+
+    color:
+        var(--soft-text);
+
+    margin-bottom:
+        25px;
+}
+
+
+.final-message {
+
+    display:
+        none;
+
+    margin-top:
+        30px;
+
+    text-align:
+        center;
+
+    max-width:
+        600px;
+
+    padding:
+        40px;
+
+    background:
+        var(--light-pink);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        25px;
+}
+
+
+.final-message.show {
+
+    display:
+        block;
+
+    animation:
+        fadeIn 0.7s ease;
+}
+
+
+.final-heart {
+
+    color:
+        var(--red);
+
+    font-size:
+        60px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.final-message h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    color:
+        var(--dark-red);
+
+    font-size:
+        38px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.final-message p {
+
+    color:
+        var(--soft-text);
+
+    line-height:
+        1.7;
+
+    margin-bottom:
+        20px;
+}
+
+
+.final-message strong {
+
+    color:
+        var(--red);
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        24px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        35px 20px;
+
+    color:
+        var(--soft-text);
+
+    border-top:
+        1px solid var(--border);
+
+    background:
+        white;
+}
+
+
+footer p {
+
+    color:
+        var(--red);
+
+    margin-bottom:
+        5px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    header {
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+
+        padding:
+            15px;
+    }
+
+
+    nav {
+
+        gap:
+            2px;
+    }
+
+
+    nav button {
+
+        font-size:
+            11px;
+
+        padding:
+            6px 8px;
+    }
+
+
+    #home {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        gap:
+            30px;
+    }
+
+
+    .home-content h1 {
+
+        font-size:
+            65px;
+    }
+
+
+    .big-heart {
+
+        width:
+            180px;
+
+        height:
+            180px;
+
+        font-size:
+            140px;
+    }
+
+
+    .letter-card {
+
+        padding:
+            30px 22px;
+    }
+
+
+    .memory-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .memory-card img {
+
+        height:
+            170px;
+    }
+
+
+    .music-player {
+
+        gap:
+            15px;
+    }
+
+
+    .album-button {
+
+        width:
+            230px;
+
+        height:
+            230px;
+    }
+
+
+    .counter {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .counter strong {
+
+        font-size:
+            28px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .scene {
+
+        padding:
+            55px 18px;
+    }
+
+
+    .memory-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .memory-card img {
+
+        height:
+            140px;
+    }
+
+
+    .album-button {
+
+        width:
+            190px;
+
+        height:
+            190px;
+    }
+
+
+    .skip-button {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            22px;
+    }
+
+
+    .counter {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .counter strong {
+
+        font-size:
+            30px;
+    }
+}
+
+/* =====================================================
+   LOVE HEART EXPLOSION
+===================================================== */
+
+.love-heart {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    font-size: 30px;
+    pointer-events: none;
+    z-index: 9999;
+
+    animation: heartPop 2s ease-out forwards;
+}
+
+@keyframes heartPop {
+
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+    }
+
+    30% {
+        opacity: 1;
+        transform:
+            translate(
+                calc(-50% + var(--x) * 0.4),
+                calc(-50% + var(--y) * 0.4)
+            )
+            scale(1.3)
+            rotate(20deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(0.7)
+            rotate(var(--rotate));
+    }
+}
+
+
+/* Bigger center heart burst */
+
+.love-burst {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #ff2d75;
+    pointer-events: none;
+    z-index: 9998;
+
+    animation: burstHeart 1s ease-out forwards;
+}
+
+@keyframes burstHeart {
+
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+
+.heart-morph-ui {
+    position: relative;
+    width: 320px;
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* ===============================
+   MAIN HEART
+================================ */
+
+.heart-core {
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 5;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 80, 130, 0.25),
+            rgba(255, 80, 130, 0.05) 55%,
+            transparent 70%
+        );
+
+    border: 1px solid rgba(255, 80, 130, 0.5);
+
+    box-shadow:
+        0 0 25px rgba(255, 60, 120, 0.5),
+        0 0 60px rgba(255, 60, 120, 0.25);
+
+    animation: heartFloat 3s ease-in-out infinite;
+}
+
+
+/* Actual heart */
+
+.heart-core span {
+
+    font-size: 100px;
+
+    color: #ff3f78;
+
+    filter:
+        drop-shadow(0 0 8px #ff3f78)
+        drop-shadow(0 0 25px rgba(255, 50, 120, 0.8));
+
+    animation: heartMorph 2s ease-in-out infinite;
+
+}
+
+
+/* ===============================
+   MORPHING RINGS
+================================ */
+
+.morph-ring {
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border: 1px solid rgba(255, 70, 130, 0.45);
+
+    border-radius: 50%;
+
+    transform: rotate(0deg);
+
+    pointer-events: none;
+}
+
+
+/* First ring */
+
+.ring-one {
+
+    animation:
+        morphRingOne 5s linear infinite;
+
+}
+
+
+/* Second ring */
+
+.ring-two {
+
+    width: 250px;
+    height: 250px;
+
+    border-style: dashed;
+
+    opacity: 0.6;
+
+    animation:
+        morphRingTwo 7s linear infinite;
+
+}
+
+
+/* ===============================
+   PULSE EFFECT
+================================ */
+
+.heart-pulse {
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border: 1px solid rgba(255, 70, 130, 0.5);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: pulseHeart 3s ease-out infinite;
+
+}
+
+
+.pulse-two {
+
+    animation-delay: 1.5s;
+
+}
+
+
+/* ===============================
+   HEART ANIMATIONS
+================================ */
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            scale(1.04);
+
+    }
+
+}
+
+
+@keyframes heartMorph {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    25% {
+
+        transform:
+            scale(1.08, 0.95)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            scale(0.95, 1.08)
+            rotate(3deg);
+
+    }
+
+    75% {
+
+        transform:
+            scale(1.06, 0.98)
+            rotate(-2deg);
+
+    }
+
+}
+
+
+@keyframes morphRingOne {
+
+    0% {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+        border-radius: 50%;
+
+    }
+
+    25% {
+
+        transform:
+            rotate(90deg)
+            scale(1.08);
+
+        border-radius: 45% 55% 50% 50%;
+
+    }
+
+    50% {
+
+        transform:
+            rotate(180deg)
+            scale(0.92);
+
+        border-radius: 55% 45% 50% 50%;
+
+    }
+
+    75% {
+
+        transform:
+            rotate(270deg)
+            scale(1.06);
+
+        border-radius: 50% 50% 45% 55%;
+
+    }
+
+    100% {
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+        border-radius: 50%;
+
+    }
+
+}
+
+
+@keyframes morphRingTwo {
+
+    0% {
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+        border-radius: 50%;
+
+    }
+
+    50% {
+
+        transform:
+            rotate(180deg)
+            scale(0.9);
+
+        border-radius: 45% 55% 55% 45%;
+
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+        border-radius: 50%;
+
+    }
+
+}
+
+
+@keyframes pulseHeart {
+
+    0% {
+
+        transform: scale(0.7);
+
+        opacity: 0.8;
+
+    }
+
+    100% {
+
+        transform: scale(2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ===============================
+   HOVER INTERACTION
+================================ */
+
+.heart-morph-ui:hover .heart-core {
+
+    box-shadow:
+        0 0 35px rgba(255, 60, 120, 0.8),
+        0 0 90px rgba(255, 60, 120, 0.4);
+
+}
+
+
+.heart-morph-ui:hover .heart-core span {
+
+    transform: scale(1.2);
+
+}
+
+
+.heart-morph-ui:hover .morph-ring {
+
+    border-color: rgba(255, 80, 140, 0.8);
+
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .heart-morph-ui {
+
+        width: 260px;
+        height: 260px;
+
+    }
+
+    .heart-core {
+
+        width: 120px;
+        height: 120px;
+
+    }
+
+    .heart-core span {
+
+        font-size: 80px;
+
+    }
+
+    .morph-ring {
+
+        width: 170px;
+        height: 170px;
+
+    }
+
+    .ring-two {
+
+        width: 210px;
+        height: 210px;
+
+    }
+
+}
+
+/* =====================================================
+   PREVIOUS / NEXT STORY NAVIGATION
+===================================================== */
+
+.section-navigation {
+    width: 100%;
+    max-width: 900px;
+    margin: 55px auto 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 10px;
+}
+
+.nav-story-button {
+    border: 1px solid rgba(190, 70, 100, 0.25);
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #b83b5e;
+
+    padding: 13px 24px;
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.nav-story-button:hover {
+    background: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(190, 70, 100, 0.15);
+}
+
+.nav-story-button:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MEMORY SLIDESHOW
+========================================================= */
+
+.memory-slideshow {
+    position: relative;
+
+    width: min(850px, 90%);
+    margin: 30px auto;
+
+    cursor: pointer;
+}
+
+
+.memory-grid {
+    position: relative;
+
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+}
+
+
+.memory-slide {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 25px;
+
+    opacity: 0;
+    transform: scale(1.08);
+
+    transition:
+        opacity 1.3s ease,
+        transform 5s ease;
+}
+
+
+.memory-slide.active {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+.slideshow-hint {
+    position: absolute;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 10px 20px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #a96f7b;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   OLD MEMORY GALLERY
+========================================================= */
+
+.memory-gallery {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    padding: 40px 30px;
+
+    overflow-y: auto;
+
+    background: #fff7f9;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(0.95);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s;
+}
+
+
+.memory-gallery.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   GALLERY GRID
+========================================================= */
+
+.memory-gallery-grid {
+    width: min(1200px, 100%);
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   MEMORY CARDS
+========================================================= */
+
+.memory-card {
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid #f4c6d0;
+
+    box-shadow:
+        0 10px 30px rgba(220, 130, 150, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.memory-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(220, 130, 150, 0.22);
+}
+
+
+.memory-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 275px;
+
+    object-fit: cover;
+}
+
+
+.memory-card-title {
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px;
+
+    text-align: center;
+
+    color: #a06d78;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-gallery {
+
+    position: fixed;
+
+    top: 20px;
+    right: 25px;
+
+    z-index: 10000;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d66b83;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.close-gallery:hover {
+
+    transform: rotate(90deg) scale(1.1);
+
+    background: #ffe5ec;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .memory-gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .memory-grid {
+        height: 400px;
+    }
+
+    .memory-gallery {
+        padding: 30px 15px;
+    }
+
+    .memory-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card img {
+        height: 300px;
+    }
+
+}

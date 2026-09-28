@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Love Story ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         FLOATING HEARTS
+    ====================================================== -->
+
+    <div class="hearts">
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+            OUR STORY <span>♥</span>
+        </div>
+
+        <nav>
+            <button data-go="home">Home</button>
+            <button data-go="message">Message</button>
+            <button data-go="memories">Memories</button>
+            <button data-go="music">Music</button>
+            <button data-go="time">Us</button>
+            <button data-go="surprise">Surprise</button>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <main>
+
+        <section id="home" class="scene active">
+
+            <div class="home-content">
+
+                <p class="small-title">
+                    FOR THE ONE I LOVE
+                </p>
+
+                <h1>
+                    My Lalovee<br>
+                    <span>Happy Anniversary</span>
+                </h1>
+
+                <p class="home-description">
+                    Three years of memories,
+                    laughter, love, and countless moments
+                    that I will always treasure.
+                </p>
+
+                <button class="main-button" data-go="message">
+                    Open My Heart ♥
+                </button>
+
+            </div>
+
+            <div class="heart-morph-ui">
+
+    <div class="morph-ring ring-one"></div>
+    <div class="morph-ring ring-two"></div>
+
+    <div class="heart-core">
+        <span>♥</span>
+    </div>
+
+    <div class="heart-pulse pulse-one"></div>
+    <div class="heart-pulse pulse-two"></div>
+
+</div>
+        </section>
+        <!-- =================================================
+             MESSAGE
+        ================================================== -->
+
+        <section id="message" class="scene">
+
+            <div class="section-header">
+
+                <p>FROM MY HEART</p>
+
+                <h2>A Letter For You</h2>
+
+            </div>
+
+            <div class="letter-card">
+
+                <div class="letter-heart">
+                    ♥
+                </div>
+
+                <p class="letter-greeting">
+                    To my lalovee, 
+                    Aiza Mae L. Datu ♥
+                </p>
+
+                <p id="letterText">
+                   Haiii Lalovee, happy 3rd anniversary natooo! 🥺❤️
+
+                 Lalovee, I’m super thankful and grateful kaayo ko nga niabot ka sa akong life.
+                 Bisan pa og sige ta’g lalis, away, ug misunderstandings usahay, love gihapon kaayo tika. 
+                 🥺❤️ Tbh, mahadlok ko nga mawala ka kay I can’t imagine my life without you anymore.
+                </p> 
+                <p>
+                 My Lalovee, thank you for staying, for understanding me, and for being part of my life. 
+                 Every moment nga naa ta together, whether happy, sad, or even sa mga times nga mag-away ta, 
+                 became memories that I will always treasure and never want to forget.
+                </p>
+                <p>
+                 Lalovee, kabalo ko nga naa pa koy daghang butang nga kinahanglan buhaton ug bawi-an sa imoha. 
+                 Mobawi rajud ko puhon, and I promise nga I’ll keep trying to become better for us. Ikaw ra jud akong gusto, lalovee. ❤️
+                </p>
+                <p> 
+                 I hope nga padayon pa ta sa paghimo og beautiful memories together, supporting each other, laughing together, growing together, and most importantly, choosing each other every single day.
+                 Thank you for these 3 beautiful years, Lalovee. I love you so, so much. ❤️🥺 
+                </p>
+                <p>
+                 Happy 3rd anniversary natooo, my laloveee. More years, more memories, more laughs, and more love with you. 
+                </p> 
+                
+                <p class="letter-ending">
+                    I love you, always. ❤️
+                </p>
+
+                <div class="signature">
+                    Forever yours,<br>
+                    <strong id="bfName"> Your Gwapo KJ ❤️</strong>
+                </div>
+
+            </div>
+
+            <div class="section-navigation">
+    <button class="nav-story-button" data-go="home">
+        ← Previous
+    </button>
+
+    <button class="nav-story-button" data-go="memories">
+        Next →
+    </button>
+</div>
+
+        </section>
+
+
+        <!-- =================================================
+             MEMORIES
+        ================================================== -->
+
+<section id="memories" class="scene">
+
+    <div class="section-header">
+
+        <p>OUR FAVORITE MOMENTS</p>
+
+        <h2>Memories</h2>
+
+    </div>
+
+
+    <!-- =================================================
+         MEMORY SLIDESHOW
+    ================================================== -->
+
+    <div id="memorySlideshow" class="memory-slideshow">
+
+        <div id="memoryField" class="memory-grid"></div>
+
+        <div class="slideshow-hint">
+            Click the photo ❤️
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         OLD MEMORY CARD DESIGN
+         Opens when slideshow is clicked
+    ================================================== -->
+
+    <div id="memoryGallery" class="memory-gallery">
+
+        <button
+            id="closeMemoryGallery"
+            class="close-gallery">
+            ✕
+        </button>
+
+        <div class="memory-gallery-grid"></div>
+
+    </div>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================== -->
+
+    <div class="section-navigation">
+
+        <button
+            class="nav-story-button"
+            data-go="message">
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            class="nav-story-button"
+            data-go="music">
+
+            Next →
+
+        </button>
+
+    </div>
+
+</section>
+
+        <!-- =================================================
+             MUSIC
+        ================================================== -->
+
+        <section id="music" class="scene">
+
+            <div class="section-header">
+
+                <p>OUR SOUNDTRACK</p>
+
+                <h2>Our Songs</h2>
+
+            </div>
+
+
+            <div class="music-player">
+
+                <button id="prev" class="skip-button">
+                    ‹
+                </button>
+
+
+                <!-- ALBUM ART = PLAY / PAUSE -->
+
+                <div id="albumButton" class="album-button">
+
+                    <img
+                        id="albumArt"
+                        src="images/PHOTO1.jpg"
+                        alt="Album Art"
+                    >
+
+                    <div class="play-overlay">
+                        <span id="playIcon">❤️</span>
+                    </div>
+
+                </div>
+
+
+                <button id="next" class="skip-button">
+                    ›
+                </button>
+
+            </div>
+
+
+            <div class="song-information">
+
+                <h3 id="songTitle">
+                    Our Song
+                </h3>
+
+                <p id="artist">
+                    Our Memories
+                </p>
+
+                <button id="playlistBtn" class="playlist-button">
+                    ♫ Choose a Song
+                </button>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+
+            <div class="music-progress">
+
+                <span id="current">
+                    0:00
+                </span>
+
+                <input
+                    id="seek"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+                <span id="total">
+                    0:00
+                </span>
+
+            </div>
+
+
+            <!-- PLAYLIST -->
+
+            <div id="playlistPanel" class="playlist-panel">
+
+                <div class="playlist-header">
+
+                    <h3>
+                        Our Playlist
+                    </h3>
+
+                    <button id="closePlaylist">
+                        ×
+                    </button>
+
+                </div>
+
+                <div id="playlist"></div>
+
+            </div>
+
+
+            <audio id="audio"></audio>
+
+            <div class="section-navigation">
+    <button class="nav-story-button" data-go="memories">
+        ← Previous
+    </button>
+
+    <button class="nav-story-button" data-go="time">
+        Next →
+    </button>
+</div>
+
+        </section>
+
+        <!-- =================================================
+             TIME TOGETHER
+        ================================================== -->
+
+        <section id="time" class="scene">
+
+            <div class="section-header">
+
+                <p>OUR JOURNEY</p>
+
+                <h2>Time Together</h2>
+
+            </div>
+
+            <p class="time-intro">
+                Every second with you is a second
+                I would choose again.
+            </p>
+
+
+            <div class="counter">
+
+                <div>
+                    <strong id="yy">00</strong>
+                    <span>Years</span>
+                </div>
+
+                <div>
+                    <strong id="mm">00</strong>
+                    <span>Months</span>
+                </div>
+
+                <div>
+                    <strong id="dd">00</strong>
+                    <span>Days</span>
+                </div>
+
+                <div>
+                    <strong id="hh">00</strong>
+                    <span>Hours</span>
+                </div>
+
+                <div>
+                    <strong id="mi">00</strong>
+                    <span>Minutes</span>
+                </div>
+
+                <div>
+                    <strong id="ss">00</strong>
+                    <span>Seconds</span>
+                </div>
+
+            </div>
+
+            <p class="anniversary-text">
+                And still counting... ❤️
+            </p>
+
+            <div class="section-navigation">
+    <button class="nav-story-button" data-go="music">
+        ← Previous
+    </button>
+
+    <button class="nav-story-button" data-go="surprise">
+        Next →
+    </button>
+</div>
+
+        </section>
+
+
+        <!-- =================================================
+             SURPRISE
+        ================================================== -->
+
+        <section id="surprise" class="scene">
+
+            <div class="section-header">
+
+                <p>ONE LAST THING</p>
+
+                <h2>A Little Surprise</h2>
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="gift-icon">
+                    🎁
+                </div>
+
+                <p>
+                   LALOVEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ❤️❤️❤️
+                </p>
+
+                <button id="unlock" class="main-button">
+                    Open It ❤️
+                </button>
+
+            </div>
+
+
+            <div id="finalMessage" class="final-message">
+
+                <div class="final-heart">
+                    ♥
+                </div>
+
+                <h2>
+                    Happy Anniversary
+                </h2>
+
+                <p>
+                    Three years with you,
+                    and I would still choose you
+                    every single time.
+                </p>
+
+                <strong>
+                    I LOVE YOU ❤️
+                </strong>
+
+            </div>
+            
+            <div class="section-navigation">
+    <button class="nav-story-button" data-go="time">
+        ← Previous
+    </button>
+
+    <button class="nav-story-button" data-go="home">
+        Start Again ❤️
+    </button>
+</div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            Made with love ❤️
+        </p>
+
+        <small>
+            For us, and all the memories still to come.
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
