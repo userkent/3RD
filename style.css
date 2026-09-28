@@ -2379,3 +2379,494 @@ footer p {
     }
 
 }
+
+/* =========================================================
+   PRIVATE LOVE PASSWORD SCREEN
+========================================================= */
+
+.password-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff5f8 0%,
+            #ffe4eb 45%,
+            #ffd4df 100%
+        );
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+}
+
+
+/* =========================================================
+   PASSWORD CARD
+========================================================= */
+
+.password-card {
+
+    width: min(450px, 100%);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(255, 160, 180, 0.4);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 70px rgba(190, 80, 110, 0.18);
+
+    backdrop-filter: blur(20px);
+
+    animation:
+        passwordCardIn 1s ease forwards;
+
+}
+
+
+@keyframes passwordCardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.94);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.password-heart {
+
+    width: 75px;
+
+    height: 75px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff8fa8,
+            #e85c7b
+        );
+
+    color: white;
+
+    font-size: 34px;
+
+    box-shadow:
+        0 10px 30px rgba(230, 80, 110, 0.3);
+
+    animation:
+        passwordHeartPulse 2s ease-in-out infinite;
+
+}
+
+
+@keyframes passwordHeartPulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.password-small-title {
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #c97889;
+
+}
+
+
+.password-card h1 {
+
+    margin: 0;
+
+    font-size: clamp(30px, 7vw, 46px);
+
+    color: #8e5362;
+
+}
+
+
+.password-description {
+
+    margin: 18px auto 30px;
+
+    max-width: 330px;
+
+    line-height: 1.7;
+
+    color: #9b6975;
+
+}
+
+
+/* =========================================================
+   PASSWORD INPUT
+========================================================= */
+
+.password-input-box {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 15px;
+
+}
+
+
+.password-input-box input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 15px 50px 15px 18px;
+
+    border: 1px solid #f1b8c5;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #7e4e5b;
+
+    font-size: 15px;
+
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.password-input-box input:focus {
+
+    border-color: #e87991;
+
+    box-shadow:
+        0 0 0 4px rgba(232, 121, 145, 0.12);
+
+}
+
+
+.password-input-box input::placeholder {
+
+    color: #c9a0a9;
+
+}
+
+
+#showPassword {
+
+    position: absolute;
+
+    right: 8px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #d36d83;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.password-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ef8298,
+            #d95775
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(217, 87, 117, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.password-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(217, 87, 117, 0.35);
+
+}
+
+
+.password-button:active {
+
+    transform: scale(0.97);
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.password-error {
+
+    min-height: 20px;
+
+    margin: 15px 0 0;
+
+    color: #d94f6d;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.password-hint {
+
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    color: #b9919b;
+
+}
+
+
+/* =========================================================
+   SUCCESS EXIT ANIMATION
+========================================================= */
+
+.password-screen.unlocking {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+
+/* =========================================================
+   WRONG PASSWORD SHAKE
+========================================================= */
+
+.password-card.shake {
+
+    animation:
+        passwordShake 0.45s ease;
+
+}
+
+
+@keyframes passwordShake {
+
+    0%,
+    100% {
+
+        transform: translateX(0);
+
+    }
+
+    20% {
+
+        transform: translateX(-10px);
+
+    }
+
+    40% {
+
+        transform: translateX(10px);
+
+    }
+
+    60% {
+
+        transform: translateX(-7px);
+
+    }
+
+    80% {
+
+        transform: translateX(7px);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .password-card {
+
+        padding: 40px 25px;
+
+        border-radius: 25px;
+
+    }
+
+    .password-heart {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 29px;
+
+    }
+
+}
+
+/* =====================================================
+   LOG OUT BUTTON
+===================================================== */
+
+.logout-button {
+    margin-left: 15px;
+    padding: 9px 16px;
+    border: 1px solid #e8a0af;
+    border-radius: 20px;
+    background: transparent;
+    color: #b85d70;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.logout-button:hover {
+    background: #ffe5eb;
+    color: #d94f6d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(217, 79, 109, .15);
+}
+
+.logout-button:active {
+    transform: scale(.95);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .logout-button {
+        margin-left: 5px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+}

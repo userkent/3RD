@@ -12,20 +12,58 @@
 
 <body>
 
-    <!-- =====================================================
-         FLOATING HEARTS
+     <!-- =====================================================
+         PRIVATE LOVE SCREEN
     ====================================================== -->
 
-    <div class="hearts">
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-        <span>♡</span>
-    </div>
+    <div id="passwordScreen" class="password-screen">
 
+        <div class="password-card">
+
+            <div class="password-heart">
+                ❤️
+            </div>
+
+            <p class="password-small-title">
+              
+            </p>
+
+            <h1>
+                
+            </h1>
+
+            <p class="password-description">
+            
+            </p>
+
+            <div class="password-input-box">
+
+                <input
+                    type="password"
+                    id="lovePassword"
+                    placeholder="Enter our secret..."
+                    autocomplete="off"
+                >
+
+                <button id="showPassword" type="button">
+                    ♡
+                </button>
+
+            </div>
+
+            <button
+                id="enterLove"
+                class="password-button">
+
+                Enter
+
+            </button>
+
+            <p id="passwordError" class="password-error"></p>
+
+        </div>
+
+    </div>
 
     <!-- =====================================================
          HEADER
@@ -45,6 +83,10 @@
             <button data-go="time">Us</button>
             <button data-go="surprise">Surprise</button>
         </nav>
+
+         <button id="logoutButton" class="logout-button">
+        Log Out ♥
+    </button>
 
     </header>
 
