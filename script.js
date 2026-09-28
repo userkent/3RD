@@ -2,6 +2,198 @@
    LOVE STORY JAVASCRIPT
 ========================================================= */
 
+/* =========================================================
+   PRIVATE LOVE PASSWORD
+========================================================= */
+
+const LOVE_PASSWORD = "LALOVE";
+
+
+const passwordScreen =
+    document.getElementById("passwordScreen");
+
+const lovePassword =
+    document.getElementById("lovePassword");
+
+const enterLove =
+    document.getElementById("enterLove");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+const passwordError =
+    document.getElementById("passwordError");
+
+const passwordCard =
+    document.querySelector(".password-card");
+
+
+/* =========================================================
+   CHECK PASSWORD
+========================================================= */
+
+function unlockLoveStory() {
+
+    const enteredPassword =
+        lovePassword.value.trim();
+
+
+    if (enteredPassword === LOVE_PASSWORD) {
+
+        passwordError.textContent =
+            "Welcome, my Lalovee ❤️";
+
+        passwordError.style.color =
+            "#d95775";
+
+
+        passwordScreen.classList.add(
+            "unlocking"
+        );
+
+
+        setTimeout(() => {
+
+            passwordScreen.style.display =
+                "none";
+
+        }, 800);
+
+
+    } else {
+
+        passwordError.textContent =
+            "Wrong secret... try again, Lalovee ❤️";
+
+
+        passwordCard.classList.remove(
+            "shake"
+        );
+
+
+        // Restart animation
+        void passwordCard.offsetWidth;
+
+
+        passwordCard.classList.add(
+            "shake"
+        );
+
+
+        lovePassword.value = "";
+
+        lovePassword.focus();
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+enterLove.addEventListener(
+    "click",
+    unlockLoveStory
+);
+
+
+/* =========================================================
+   PRESS ENTER
+========================================================= */
+
+lovePassword.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            unlockLoveStory();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SHOW / HIDE PASSWORD
+========================================================= */
+
+showPassword.addEventListener(
+    "click",
+    function() {
+
+        if (
+            lovePassword.type === "password"
+        ) {
+
+            lovePassword.type = "text";
+
+            showPassword.textContent =
+                "♥";
+
+        } else {
+
+            lovePassword.type = "password";
+
+            showPassword.textContent =
+                "♡";
+
+        }
+
+    }
+);
+
+// =====================================================
+// LOG OUT
+// =====================================================
+
+const logoutButton = document.getElementById("logoutButton");
+
+if (logoutButton) {
+
+    logoutButton.addEventListener("click", function () {
+
+        // Show password screen again
+        passwordScreen.classList.remove("unlocking");
+
+        passwordScreen.style.display = "flex";
+
+        // Clear password
+        lovePassword.value = "";
+
+        // Clear messages
+        passwordError.textContent = "";
+
+        // Hide playlist if it is open
+        if (playlistPanel) {
+            playlistPanel.classList.remove("show");
+        }
+
+        // Stop music
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        // Reset play icon
+        if (playIcon) {
+            playIcon.textContent = "❤️";
+        }
+
+        // Go back to Home
+        go("home");
+
+        // Focus password input
+        setTimeout(() => {
+            lovePassword.focus();
+        }, 300);
+
+    });
+
+}
 
 /* =========================================================
    ANNIVERSARY COUNTER
